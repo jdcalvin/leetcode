@@ -1,6 +1,4 @@
-  
 require 'pry'
-require 'optparse'
 
 task :console do
   def reload
@@ -22,7 +20,11 @@ task :generate, :problem do |t, args|
   puts b.problem_name_spec_file_path
 end
 
+task :remove, :problem do |t, args|
+  load 'lib/generator/builder.rb'
+  problem = args.problem
+  b = Builder.new(problem)
 
-task :hi, :hey do |t, args|
-  puts args
+  FileUtils.rm b.problem_name_file_path
+  FileUtils.rm b.problem_name_spec_file_path
 end
