@@ -1,7 +1,7 @@
 require 'spec_helper'
+require_problem('<%= problem_name_snake_case %>')
 
 RSpec.describe Problems::<%= problem_name_constantized %> do
-
   let(:subject) { described_class.solve(*args) }
 
   describe 'solve' do

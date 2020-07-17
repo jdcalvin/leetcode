@@ -1,6 +1,10 @@
-
 require 'pry'
-require_relative '../app'
+require_relative '../lib/generator/builder'
+
+def require_problem(name)
+  require Builder.new(name).problem_name_file_path
+end
+
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true

@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
 RSpec.describe Builder do
 
   subject {described_class.new(problem_name)}
@@ -56,7 +55,7 @@ RSpec.describe Builder do
 
   describe 'spec_content' do
     let(:problem_name) { '123square' }
-    it 'builds ruby module file' do 
+    it 'builds spec file' do 
        expect(subject.spec_content).to eq(File.read('./spec/sample/problem_spec.rb.txt'))
     end
   end

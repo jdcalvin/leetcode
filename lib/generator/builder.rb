@@ -1,6 +1,5 @@
 require 'erb'
 require 'humanize'
-require 'fileutils'
 require 'ostruct'
 class Builder
 
@@ -18,7 +17,6 @@ class Builder
 
   def problem_name_constantized
     parse_name_to_arr.map(&:capitalize).join('')
-    
   end
 
   def problem_name_snake_case
@@ -62,6 +60,4 @@ class Builder
                 .split(/[-_ ]+/)
                 .select {|x| x.length > 0}
   end
-
-
 end

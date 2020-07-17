@@ -1,7 +1,7 @@
 require 'spec_helper'
+require_problem('one_two_three_square')
 
 RSpec.describe Problems::OneTwoThreeSquare do
-
   let(:subject) { described_class.solve(*args) }
 
   describe 'solve' do
