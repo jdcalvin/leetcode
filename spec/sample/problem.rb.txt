@@ -1,0 +1,9 @@
+module Problems
+  module OneTwoThreeSquare
+    module_function
+
+    def solve(*args)
+    end
+
+  end
+end

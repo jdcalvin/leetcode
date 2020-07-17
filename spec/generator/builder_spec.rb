@@ -48,38 +48,16 @@ RSpec.describe Builder do
   end
 
   describe 'module_content' do
+    let(:problem_name) { '123square' }
     it 'builds ruby module file' do 
-       expect(subject.module_content).to eq("" +
-      "module Problems\n" +
-      "  module OneTwoThreeSquareSixSixCircle\n" +
-      "    module_function\n" +
-      "\n" +
-      "    def solve(*args)\n" +
-      "    end\n" +
-      "\n" +
-      "  end\n" +
-      "end" +
-      "")
+       expect(subject.module_content).to eq(File.read('./spec/sample/problem.rb.txt'))
     end
   end
 
   describe 'spec_content' do
-    xit 'builds ruby module file' do 
-       expect(subject.spec_content).to eq("" +
-        "require 'spec_helper'\n" +
-        "\n" +
-        "RSpec.describe Problems::OneTwoThreeSquareSixSixCircle do\n" +
-        "\n" +
-        "  let(:args) { [] }\n" +
-        "  let(:subject) { described_class.solve(args) } \n" +
-        "\n" +
-        "  describe 'solve' do\n" +
-        "\n" +
-        "    xit 'TODO' do\n" +
-        "    end\n" +
-        "  end\n" +
-        "end\n" +
-      "")
+    let(:problem_name) { '123square' }
+    it 'builds ruby module file' do 
+       expect(subject.spec_content).to eq(File.read('./spec/sample/problem_spec.rb.txt'))
     end
   end
 end

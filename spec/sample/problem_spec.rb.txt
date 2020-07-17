@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Problems::<%= problem_name_constantized %> do
+RSpec.describe Problems::OneTwoThreeSquare do
 
   let(:subject) { described_class.solve(*args) }
 
